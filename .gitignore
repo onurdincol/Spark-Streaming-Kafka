@@ -1,0 +1,14 @@
+.idea
+*.iml
+
+*.class
+*.log
+
+#eclipse files
+.project
+.settings/
+.tern-project
+bin/
+.classpath
+.cache-main
+.cache-tests
