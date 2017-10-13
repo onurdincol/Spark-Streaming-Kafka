@@ -19,7 +19,7 @@ object KafkaTopicToTopic{
     if (args.length < 3) {
       System.err.println(
         s"""
-           |Usage: KafkaTopicToTopic <brokers> <topics>
+           |Usage: KafkaTopicToTopic <source_topic> <target_topic>
            |  <brokers> is a list of Kafka brokers for local usage localhost:9092
            |  <source_topic> is a kafka topic to read from
            |  <target_topic> is a kafka topic to write to
