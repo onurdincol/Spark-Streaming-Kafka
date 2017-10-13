@@ -27,7 +27,7 @@ object KafkaConsumerOffsetInfo{
                                 "auto.offset.reset" -> "smallest")
     val lines = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc, kafkaDirectParams, kafkaTopics)
     lines.foreachRDD((rdd,batchTime) => {
-      if(!rdd.isEmpty()){  //Bu bize topic bilgilarini ve partition,offset bilgilerini verir
+      if(!rdd.isEmpty()){
         val offsetRanges = rdd.asInstanceOf[HasOffsetRanges].offsetRanges
           offsetRanges.foreach(offset => println(offset.topic,offset.partition, offset.fromOffset, offset.count(),
             offset.untilOffset))
